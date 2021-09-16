@@ -3,19 +3,20 @@
 ## API
 ### testList API
 - Code: Javascript(NodeJS)
+- Method: POST
 - Resquest: {}
 - Response: 
 ```json
 {
-    testList: [
+    "testList": [
         {
-            testName: '2021-2-2nd-mid-수학-은수진',
-            year: 2021,
-            grade: 2,
-            semester: '2nd',
-            exam: 'mid',
-            subject: '수학',
-            teacher: '은수진'
+            "testName": "2021-2-2nd-mid-수학-은수진",
+            "year": 2021,
+            "grade": 2,
+            "semester": "2nd",
+            "exam": "mid",
+            "subject": "수학",
+            "teacher": "은수진"
         }
     ]
 }
@@ -23,5 +24,11 @@
 
 ### Download API
 - Code: Javascript(NodeJS)
-- Request: {}
+- Method: POST
+- Request
+```json
+{
+    "testName": "2021-2-2nd-mid-수학-은수진"
+}
+```
 - Response: Send File
