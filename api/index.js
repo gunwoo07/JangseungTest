@@ -6,8 +6,15 @@ const app = express();
 const bodyParser = require('body-parser');
 
 
+// import router
+const testList = require('./router/testList');
+
+
 // use bodyParser for post
 app.use(bodyParser());
+
+// use router
+app.use('/testList', testList);
 
 
 // set listening port
