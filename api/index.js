@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 
 // import router
 const testList = require('./router/testList');
+const downloadTest = require('./router/downloadTest');
 
 
 // use bodyParser for post
@@ -15,6 +16,7 @@ app.use(bodyParser());
 
 // use router
 app.use('/testList', testList);
+app.use('/downloadTest', downloadTest);
 
 
 // set listening port

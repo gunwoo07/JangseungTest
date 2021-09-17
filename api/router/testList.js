@@ -11,7 +11,7 @@ var path = require('path');
 // testList router
 router.post('/', (req, res) => {
     fs.readFile(path.join(__dirname, '../data', 'data.json'), 'utf8', (err, data) => {
-        res.send(data)
+        res.send(data);
     });
 });
 

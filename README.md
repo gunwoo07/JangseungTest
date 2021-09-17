@@ -24,7 +24,7 @@
 
 ### Download API
 - Code: Javascript(NodeJS)
-- Method: POST
+- Method: GET
 - Request
 ```json
 {
