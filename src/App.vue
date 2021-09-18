@@ -2,25 +2,28 @@
 <div class="search">
   <input v-on:input="typing" v-bind:value="input" placeholder="검색" class="input">
 </div>
-  <div class="test" @click="viewImage(index)" v-bind:class="test['subject']" v-for="(test, index) in filteredList" :key="index">
-    <div class="desc">
-      {{test['year']}}년
-    </div>
-    <div class="desc">
-      {{test['grade']}} 학년
-      {{test['semester'][0]}} 학기
-    </div>
-    <div class="desc">
-        {{test['exam']}}
-    </div>
-    <div class="desc subject">
-      {{test['subject']}}
-    </div>
-    <div class="desc" v-for="(teacher, index) in test['teacher']" :key="index">
-      {{teacher}} 선생님
-    </div>
-    <br>
+<div class="test" @click="viewImage(index)" v-bind:class="test['subject']" v-for="(test, index) in filteredList" :key="index">
+  <div class="desc">
+    {{test['year']}}년
   </div>
+  <div class="desc">
+    {{test['grade']}} 학년
+    {{test['semester'][0]}} 학기
+  </div>
+  <div class="desc">
+      {{test['exam']}}
+  </div>
+  <div class="desc subject">
+    {{test['subject']}}
+  </div>
+  <div class="desc" v-for="(teacher, index) in test['teacher']" :key="index">
+    {{teacher}} 선생님
+  </div>
+  <br>
+</div>
+<div class="footer">
+  <a href="https://github.com/gunwoo07" target='_blank'>made by Dev07</a>
+</div>
 </template>
 
 <script>
@@ -236,7 +239,7 @@ export default {
     font-style: normal;
 }
 
-html, body {
+html, body, #app {
     overflow-x: hidden;
     margin: 0;
     height: 100%;
@@ -293,6 +296,19 @@ input {
   margin: auto;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
 }
 
 .미술 {
