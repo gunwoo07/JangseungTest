@@ -279,7 +279,7 @@ input {
   border: none;
   caret-color: dodgerblue;
   box-shadow: 0 0 11px rgba(40,40,40,.2); 
-
+  font-size: 25px;
 }
 
 .main {
@@ -292,8 +292,7 @@ input {
   text-align: center;
   display: inline-block;
   border-radius: 20px;
-  margin: 30px;
-  margin-top: ;
+  margin: 15px;
   padding: 5px;
   width: 120px;
   height: 150px;
