@@ -42,7 +42,7 @@ export default {
         subject: '',
         teacher: '',
       },
-      baseURI: 'http://146.56.145.134:4000'
+      baseURI: 'https://jangseungtest.run.goorm.io'
     }
   },
   mounted() {
