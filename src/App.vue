@@ -281,7 +281,7 @@ input {
   margin: 30px;
   padding: 5px;
   width: 120px;
-  height: 130px;
+  height: 150px;
   text-align: center;
   transition: all .2s ease-out;
   box-shadow: 0 0 11px rgba(40,40,40,.2); 
