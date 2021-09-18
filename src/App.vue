@@ -244,10 +244,11 @@ export default {
 }
 
 html, body, #app {
-    overflow-x: hidden;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
+  color:#353535;
+  overflow-x: hidden;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 #app {
@@ -269,6 +270,7 @@ html, body, #app {
 }
 
 input {
+  color: #353535;
   display: inline-block;
   font-family: 'IM_Hyemin-Bold';
   height: 35px;
