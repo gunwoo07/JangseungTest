@@ -2,28 +2,32 @@
 <div class="search">
   <input v-on:input="typing" v-bind:value="input" placeholder="검색" class="input">
 </div>
-<div class="test" @click="viewImage(index)" v-bind:class="test['subject']" v-for="(test, index) in filteredList" :key="index">
-  <div class="desc">
-    {{test['year']}}년
+<div class="main">
+
+  <div class="test" @click="viewImage(index)" v-bind:class="test['subject']" v-for="(test, index) in filteredList" :key="index">
+    <div class="desc">
+      {{test['year']}}년
+    </div>
+    <div class="desc">
+      {{test['grade']}} 학년
+      {{test['semester'][0]}} 학기
+    </div>
+    <div class="desc">
+        {{test['exam']}}
+    </div>
+    <div class="desc subject">
+      {{test['subject']}}
+    </div>
+    <div class="desc" v-for="(teacher, index) in test['teacher']" :key="index">
+      {{teacher}} 선생님
+    </div>
+    <div class="desc" v-if="test['teacher'].length == 1">
+      X
+    </div>
   </div>
-  <div class="desc">
-    {{test['grade']}} 학년
-    {{test['semester'][0]}} 학기
-  </div>
-  <div class="desc">
-      {{test['exam']}}
-  </div>
-  <div class="desc subject">
-    {{test['subject']}}
-  </div>
-  <div class="desc" v-for="(teacher, index) in test['teacher']" :key="index">
-    {{teacher}} 선생님
-  </div>
-  <br>
 </div>
-<div class="footer">
-  <a href="https://github.com/gunwoo07" target='_blank'>made by Dev07</a>
-</div>
+
+
 </template>
 
 <script>
@@ -242,8 +246,8 @@ export default {
 html, body, #app {
     overflow-x: hidden;
     margin: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 #app {
@@ -278,14 +282,21 @@ input {
 
 }
 
+.main {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
 .test {
+  text-align: center;
+  display: inline-block;
   border-radius: 20px;
-  float: left;
   margin: 30px;
+  margin-top: ;
   padding: 5px;
   width: 120px;
   height: 150px;
-  text-align: center;
   transition: all .2s ease-out;
   box-shadow: 0 0 11px rgba(40,40,40,.2); 
 }
@@ -300,10 +311,12 @@ input {
 
 .footer {
   width: 100%;
+
   position: absolute;
   bottom: 0;
   text-align: center;
-  margin-bottom: 20px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 a {
