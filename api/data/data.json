@@ -7,7 +7,7 @@
             "semester": "2nd",
             "exam": "final",
             "subject": "수학",
-            "teacher": "김경태<br>은수진"
+            "teacher": ["김경태", "은수진"]
         },
         {
             "testName": "2021-2-2nd-mid-과학-권중삼",
@@ -16,7 +16,7 @@
             "semester": "2nd",
             "exam": "mid",
             "subject": "과학",
-            "teacher": "권중삼"
+            "teacher": ["권중삼"]
         }
     ]
 }

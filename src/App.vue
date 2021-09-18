@@ -16,8 +16,8 @@
     <div class="desc subject">
       {{test['subject']}}
     </div>
-    <div class="desc">
-      {{test['teacher']}} 선생님
+    <div class="desc" v-for="(teacher, index) in test['teacher']" :key="index">
+      {{teacher}} 선생님
     </div>
     <br>
   </div>

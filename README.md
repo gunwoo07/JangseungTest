@@ -16,7 +16,7 @@
             "semester": "2nd",
             "exam": "mid",
             "subject": "수학",
-            "teacher": "은수진"
+            "teacher": ["은수진"]
         }
     ]
 }
