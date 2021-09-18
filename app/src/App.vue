@@ -210,10 +210,10 @@ export default {
             break;
 
           case '중간고사':
-            this.searchElement.exam = 'midterm';
+            this.searchElement.exam = 'mid';
             break;
           case '중간':
-            this.searchElement.exam = 'midterm';
+            this.searchElement.exam = 'mid';
             break;
           case '기말고사':
             this.searchElement.exam = 'final';
@@ -247,16 +247,6 @@ html, body {
   font-family: IM_Hyemin-Bold;
 }
 
-
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
-
 .search {
   margin: 0;
   padding: 0;
@@ -287,12 +277,11 @@ input {
 
 .test {
   border-radius: 20px;
-  background-color: #77AF9C;
   float: left;
   margin: 30px;
   padding: 5px;
   width: 120px;
-  height: 177px;;
+  height: 130px;
   text-align: center;
   transition: all .2s ease-out;
   box-shadow: 0 0 11px rgba(40,40,40,.2); 
