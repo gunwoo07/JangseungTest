@@ -26,8 +26,12 @@ app.use('/testList', testList);
 app.use('/downloadTest', downloadTest);
 
 
-require('greenlock-express').init({
-    packageRoot: __dirname,
-    configDir: './greenlock.d',
-    maintainerEmail: 'studentdeveloper07@gmail.com',
-}).serve(app);
+// set listening port
+const port = 4000;
+
+
+// listening on port
+app.listen(port, () => {
+    console.log('Jangseng Test API');
+    console.log(`* Running on port ${port}`);
+});
