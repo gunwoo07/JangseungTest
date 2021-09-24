@@ -10,40 +10,31 @@
             "teacher": ["김경태", "은수진"]
         },
         {
-            "testName": "2021-2-2nd-final-수학-은수진 김경태",
-            "year": 2021,
+            "testName": "2018-2-1st-final-수학-은수진",
+            "year": 2018,
             "grade": 2,
-            "semester": "2nd",
+            "semester": "1st",
             "exam": "final",
             "subject": "수학",
-            "teacher": ["김경태", "은수진"]
+            "teacher": ["은수진"]
         },
         {
-            "testName": "2021-2-2nd-mid-과학-권중삼",
-            "year": 2021,
+            "testName": "2018-2-1st-final-한문-김남희",
+            "year": 2018,
             "grade": 2,
-            "semester": "2nd",
-            "exam": "mid",
-            "subject": "과학",
-            "teacher": ["권중삼"]
-        },
-        {
-            "testName": "2021-2-2nd-mid-과학-권중삼",
-            "year": 2021,
-            "grade": 2,
-            "semester": "2nd",
-            "exam": "mid",
-            "subject": "과학",
-            "teacher": ["권중삼"]
-        },
-        {
-            "testName": "2021-2-2nd-final-수학-은수진 김경태",
-            "year": 2021,
-            "grade": 2,
-            "semester": "2nd",
+            "semester": "1st",
             "exam": "final",
-            "subject": "수학",
-            "teacher": ["김경태", "은수진"]
-        }
+            "subject": "한문",
+            "teacher": ["김남희"]
+        },
+        {
+            "testName": "2019-2-1st-final-역사-모름",
+            "year": 2019,
+            "grade": 2,
+            "semester": "1st",
+            "exam": "final",
+            "subject": "역사",
+            "teacher": ["모름"]
+        }   
     ]
 }
