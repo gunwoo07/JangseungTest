@@ -1,10 +1,9 @@
 <template>
 <div class="search">
   <input v-on:input="typing" v-bind:value="input" placeholder="검색" class="input">
-  <button class="auth" @click="login()">학생인증</button>
 </div>
-
 <div class="main">
+
   <div class="test" @click="viewImage(index)" v-bind:class="test['subject']" v-for="(test, index) in filteredList" :key="index">
     <div class="desc">
       {{test['year']}}년
@@ -27,7 +26,6 @@
     </div>
   </div>
 </div>
-<div class="desc-login">다운로드는 학생인증 후 사용 가능합니다.</div>
 
 
 </template>
@@ -40,8 +38,6 @@ export default {
   name: 'App',
   data() {
     return {
-      user: '',
-      userPW: '',
       testList: [],
       filteredList: [],
       input: '',
@@ -53,8 +49,7 @@ export default {
         subject: '',
         teacher: '',
       },
-      baseURI: 'http://localhost:4000'
-      // baseURI: 'https://jangseungtest.run.goorm.io'
+      baseURI: 'https://jangseungtest.run.goorm.io'
     }
   },
   mounted() {
@@ -69,46 +64,9 @@ export default {
         this.filteredList = this.testList;
       });
     },
-    login: function() {
-      var input = prompt("학번@인증번호를 입력하세요\n(*학번만 입력시 인증번호가 학교 메일로 전송됩니다.)\n*(학생 인증을 해야 다운받을 수 있습니다.)", "");
-      var splitedInput = [];
-
-      try {
-        splitedInput = input.split('@');
-      } catch {
-        return;
-      }
-
-      this.user = splitedInput[0];
-      this.userPW = splitedInput[1];
-
-      console.log(this.user, this.userPW);
-    },
-
     viewImage: function(index) {
-      let url = this.baseURI + '/downloadTest';
-      let data = {
-        fileName: this.filteredList[index]['testName'],
-        user: this.user,
-        userPW: this.userPW,
-      }
+      window.open(`${this.baseURI}/downloadTest/${this.filteredList[index]['testName']}`).focus();
 
-      axios({
-        method: 'POST',
-        url: url,
-        responseType: 'blob',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: data
-      }).then(res => {
-        const url = window.URL.createObjectURL(new Blob([res.data], {type: res.headers['content-type']}));
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', `${this.filteredList[index]['testName']}.pdf`);
-        document.body.appendChild(link);
-        link.click();
-      });
     },
     typing: function(e) {
       this.input = e.target.value;
@@ -224,6 +182,10 @@ export default {
           case '2018년':
             this.searchElement.year = 2018;
             break;
+          case '2018년도':
+            this.searchElement.year = 2018;
+            break;
+
           case '2019':
             this.searchElement.year = 2019;
             break;
@@ -298,7 +260,6 @@ html, body, #app {
   padding: 0;
 
   width: 100%;
-  height: 55px;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
@@ -313,7 +274,7 @@ input {
   display: inline-block;
   font-family: 'IM_Hyemin-Bold';
   height: 35px;
-  width: 45%;
+  width: 70%;
   border-radius: 10px;
   padding: 7px;
   outline: none;
@@ -323,23 +284,10 @@ input {
   font-size: 25px;
 }
 
-.auth {
-  font-family: 'IM_Hyemin-Bold';
-  font-size: 25px;
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0 0 11px rgba(40,40,40,.2); 
-  padding: 7px;
-  height: 50px;
-  margin-left: 15px;
-}
-
 .main {
   text-align: center;
   position: absolute;
   width: 100%;
-  padding-bottom: 50px;
 }
 
 .test {
@@ -362,7 +310,15 @@ input {
   cursor: pointer;
 }
 
+.footer {
+  width: 100%;
 
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 
 a {
   text-decoration: none;
@@ -491,6 +447,10 @@ a {
   height: 100vh;
   display: flex;
   background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .image-background {
@@ -504,14 +464,4 @@ a {
   height: 85vh;
 }
 
-.desc-login {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  clear: left;
-  bottom: 0;
-  text-align: center;
-  background-color: white;
-  padding: 10px;
-}
 </style>
