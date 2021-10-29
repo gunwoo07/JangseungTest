@@ -28,13 +28,13 @@
             "teacher": ["김남희"]
         },
         {
-            "testName": "2019-2-1st-final-역사-모르는",
+            "testName": "2019-2-1st-final-역사-모름",
             "year": 2019,
             "grade": 2,
             "semester": "1st",
             "exam": "final",
             "subject": "역사",
-            "teacher": ["모르는"]
+            "teacher": ["모름"]
         }   
     ]
 }
